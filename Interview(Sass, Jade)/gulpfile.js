@@ -64,6 +64,7 @@ gulp.task('jade', function(){
 gulp.task('watch', function() {
 	gulp.watch('builds/js/**/*', ['js']);
 	gulp.watch(['process/sass/**/*.scss'], ['sass']);
+	gulp.watch(['process/jade/**/*.jade'], ['jade']);
 });
 
 // Starting the live server
