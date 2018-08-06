@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps'),
 	webserver = require('gulp-webserver');
 
-// Manage JS
+// Compiling JS
 gulp.task('js', function() {
 	return gulp.src('builds/js/**/*.js')
 
@@ -24,7 +24,7 @@ gulp.task('js', function() {
 	    .pipe(jshint.reporter('jshint-stylish'));
 });
 
-// Manage Sass
+// Compiling Sass
 gulp.task('sass', function() {
 	return gulp.src('process/sass/style.scss')
 
@@ -43,6 +43,23 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest('builds/css'));
 });
 
+// Compiling Jade
+gulp.task('jade', function(){
+	return gulp.src('process/jade/**/*.jade')
+
+		.pipe(plumber({ errorHandler: function(err) {
+
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                message:  err.toString()
+            })(err);
+
+        }}))
+
+		.pipe(jade({ pretty: true }))
+		.pipe(gulp.dest('builds/'));
+});
+
 // Watching files for changes
 gulp.task('watch', function() {
 	gulp.watch('builds/js/**/*', ['js']);
@@ -58,4 +75,4 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('default', ['sass', 'watch', 'webserver']);
+gulp.task('default', ['sass', 'jade', 'watch', 'webserver']);
