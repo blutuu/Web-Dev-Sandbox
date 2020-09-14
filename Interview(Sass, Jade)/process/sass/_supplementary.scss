@@ -1,0 +1,51 @@
+.hidden {
+  display: none;
+}
+/*======================================
+=            Misc. Modules            =
+======================================*/
+
+/**
+ *
+ * Slideshow CSS
+ *
+ */
+
+.slideVehicle {
+  display: flex;
+  width: fit-content;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.slideItem {
+  // margin: 0 15px;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.prev {
+    background-image: url("/images/rightarrow.png");
+    background-position: center;
+    left: 10px;
+  }
+
+  &.next {
+    background-image: url("/images/leftarrow.png");
+    background-position: center;
+    right: 10px;
+  }
+}
+
+
+/*=====  End of Minor Features  ======*/

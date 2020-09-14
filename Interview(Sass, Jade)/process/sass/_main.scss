@@ -1,9 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+.topbar {
+  margin-bottom: 10px;
+  border-bottom: solid 1px;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    >li {
+      margin: 0 10px;
+      transition: .3s;
+
+      &:hover {
+        // background-color: #ddd;
+      }
+
+      a {
+        display: block;
+        padding: 5px;
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 .main {
-	width: 50%;
-	height: 100%;
-	min-width: 500px;
-	border: solid 1px;
-	border-radius: 5px;
-	background-color: $blue;
-	margin: 10px auto;
+  width: 50%;
+  min-width: 500px;
+  border: solid 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: $white;
+  margin: 10px auto;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+
+  #leftsidebar {
+    width: 236px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.hvrunderline1 {
+
+  &:before,
+  &:after {
+    content: "";
+    width: 0;
+    height: 5px;
+    border-bottom: solid 5px $oe_lightblue;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transition: .3s;
+  }
+
+  &:hover {
+
+
+    &:before {
+      width: 50%;
+      left: 0;
+      transition-delay: .3s;
+    }
+
+    &:after {
+      width: 50%;
+      transition-delay: .3s;
+    }
+
+    & {
+      transform: translateY(-2px);
+      transition: .3s;
+    }
+  }
+}
+
+.blocklink {
+  width: 47%;
+  min-height: 25px;
+  display: table;
+  position: relative;
+  margin: 10px 0 0;
+  padding: 7px 5px;
+  box-sizing: border-box;
+  border-bottom: solid 2px darken($oe_midblue, 25);
+  background-color: $oe_midblue;
+  color: $white;
+  text-align: center;
+  transition: .3s;
+
+  &:hover {
+    background-color: lighten($oe_midblue, 5);
+// transform: scale(.97);
+  }
+}
+
+a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  color: $white;
+  text-decoration: none;
+}
+
+>div {
+  display: table-cell;
+// float: left;
+// border: solid 1px black;
+}
+
+.iconbox {
+  width: 30px;
+  vertical-align: middle;
+}
+
+.icontextbox {
+  width: 60px;
+}
+
+#shinstar {
+  position: relative;
+  height: 246px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: $oe_midblue;
+  text-align: center;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border: solid 118px transparent;
+    border-bottom: solid 25px white;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+  }
+
+  > div {
+    margin: 10px 0;
+  }
+
+  #recipbox {
+    display: flex;
+    width: fit-content;
+    height: 148px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: .3s;
+  }
+
+  .slideItem.active {
+    ul {
+      animation: scrollup linear 1;
+      animation-duration: 10s;
+    }
+  }
+
+  .recip {
+    width: 216px;
+    margin-right: 10px;
+
+    .starcat {
+      z-index: 1;
+    }
+
+    ul {
+      padding-top: 50%;
+      list-style-type: none;
+      padding-left: 0;
+
+      &.active {
+        
+      }
+
+      li {
+        margin: 10px 0;
+        // color: white;
+      }
+    }
+    
+  }
+
+  .recipname {
+    display: block;
+  }
+
+  .starcat {
+    position: relative;
+  }
+
+  .catribbon {
+    width: 100%;
+    padding: 10px;
+    background-color: $oe_orange;
+    top: 0;
+  }
+
+}
+
+/*=================================
+=            Spotlight            =
+=================================*/
+
+#spotlight {
+  width: 100%;
+  position: relative;
+  // padding: 14px;
+  background-color: $oe_midblue;
+  overflow: hidden;
+
+  h4 {
+    margin: 0px;
+    padding: 0px 5px 10px;
+    color: white;
+    border-bottom: solid 3px white;
+  }
+}
+
+#spotlight_slideshow {
+  margin-top: 35px;
+  padding: 10px 0 20px;
+  // border-radius: 10px;
+  color: white;
+  // background-color: darken($oe_midblue, 7);
+
+  .entryslide {
+    text-align: center;
+
+    .spotlight-img {
+      width: 125px;
+      margin: 10px 30px;
+    }
+    .spotlight-badge {
+      margin-top: 5px;
+      font-weight: bold;
+
+      img {
+        width: 20px;
+        vertical-align: middle;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .spotlight-wrap {
+    margin: 10px 15px;
+    padding: 10px;
+    background-color: darken($oe_midblue, 7);
+    border-radius: 10px;
+  }
 }

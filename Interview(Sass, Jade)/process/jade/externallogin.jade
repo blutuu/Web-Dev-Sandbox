@@ -1,0 +1,18 @@
+head
+  title External Login Page
+  include includes/head.jade
+  script.
+    function loginForm() {
+      document.myform.submit();
+      document.myform.action = "http://172.17.29.63/ucdashboard/";
+    }
+
+body
+  .main
+    include includes/topbar.jade
+
+    form(action="http://172.17.29.63/ucdashboard/" name="myform" method="post")
+      input(type="text" id="txtUID" class="txtLoginInput" value="ISI")
+      input(type="password" id="txtPassword" class="txtLoginInput" value="T3lemanagment")
+      input(type="button" id="cmdLogin" class="btn" value="Login")
+

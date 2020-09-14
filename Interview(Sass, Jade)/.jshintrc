@@ -31,7 +31,8 @@
     "maxstatements": false, // {int} Max number statements per function
     "maxcomplexity": false, // {int} Max cyclomatic complexity per function
     "maxlen": false, // {int} Max number of characters per line
-
+    // "esversion": 6,
+    
     // Relaxing
     "browser": true, //true: Assume this is going to a browser
     "devel": true, //true: Allow poor man console.log debugging, make sure you remove for production
@@ -67,5 +68,6 @@
         "$": false,
         "jquery": false,
         "require": false
+        // "esversion": 6 
     } // additional predefined global variables
 }
